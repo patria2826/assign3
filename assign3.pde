@@ -1,7 +1,7 @@
 int bgx, gamestate, life, gsec, enemystate;
 float px, py, gx, gy, eX, eY;
 PImage start1, start2, end1, end2, bg1, bg2, enemy, player, hp, gift;
-final int GAMESTART=0, GAMEPLAY=1, GAMEWIN=2, GAMEOVER=3, A=4, B=5, C=6;
+final int GAMESTART=0, GAMEPLAY=1, GAMEWIN=2, GAMEOVER=3, eA=4, eB=5, eC=6;
 boolean upPressed = false, downPressed = false, leftPressed = false, rightPressed = false;
 void setup () {
   size(640, 480) ;
@@ -19,7 +19,7 @@ void setup () {
   enemy = loadImage("img/enemy.png");
   eX = -60;
   eY = floor(random(1,420)); 
-  enemystate = C;
+  enemystate = eC;
   ///PLAYER///
   player = loadImage("img/fighter.png");
   px = 590;
@@ -60,33 +60,33 @@ void draw() {
     }
     ///Enemy///
     switch(enemystate){
-    case(C):  
+    case(eC):  
     int eCS = 0;
     for(eCS = 0; eCS < 5; eCS++) {
       image(enemy, eX-eCS*65, eY);
       eX++;
       if(eX >= 965) {
-        enemystate = B;
+        enemystate = eB;
         eX = -60;
         eY = floor(random(1,155));
         }
         
     }
     break;
-    case(B):
+    case(eB):
     int eBS = 0;
     for(eBS = 0; eBS < 5; eBS++) {
       image(enemy, eX-eBS*65, eY+eBS*65);
       eX++;
       if(eY > 155) {eY = 150;}
       if(eX >= 965) {
-      enemystate = A;
+      enemystate = eA;
       eX = -60;
       eY =floor(random(125,285));
       }
     }
     break;
-    case(A):
+    case(eA):
     int eAS = 0;
     for(eAS = 0; eAS < 5; eAS++) {
       if(eY < 120) {eY = 125;}
@@ -98,7 +98,7 @@ void draw() {
       if(eAS == 4) {image(enemy, eX-260, eY);}
       eX++;
       if(eX >= 965) {
-        enemystate = C;
+        enemystate = eC;
         eX = -60;
         eY = floor(random(1,420));
       
