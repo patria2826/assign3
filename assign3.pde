@@ -95,7 +95,7 @@ void draw() {
       if(eAS == 1) {image(enemy, eX-65, eY+60); image(enemy, eX-65, eY-60);}
       if(eAS == 2) {image(enemy, eX-130, eY+120); image(enemy, eX-130, eY-120);}
       if(eAS == 3) {image(enemy, eX-195, eY+60); image(enemy, eX-195, eY-60);}
-      if(eAS == 4) {image(enemy, eX-260, eY); image(enemy, eX-260, eY);}
+      if(eAS == 4) {image(enemy, eX-260, eY);}
       eX++;
       if(eX >= 965) {
         enemystate = C;
@@ -156,12 +156,12 @@ void draw() {
         /*box=-60;*/
       }
       
-      ///HP///
-    colorMode(HSB,128,60,30);
-    strokeWeight(20);
-    stroke(180, 280, 30);
-    line(30,32,life,32);
-    image(hp, 20, 20);
+        ///HP///
+        colorMode(HSB,128,60,30);
+        strokeWeight(20);
+        stroke(180, 280, 30);
+        line(30,32,life,32);
+        image(hp, 20, 20);
     
       break;
       //~~**GAMEOVER**~~//
