@@ -60,7 +60,7 @@ void draw() {
     }
     ///Enemy///
     switch(enemystate){
-    case(eC):  
+    case eC:  
     int eCS = 0;
     for(eCS = 0; eCS < 5; eCS++) {
       image(enemy, eX-eCS*65, eY);
@@ -73,7 +73,7 @@ void draw() {
         
     }
     break;
-    case(eB):
+    case eB:
     int eBS = 0;
     for(eBS = 0; eBS < 5; eBS++) {
       image(enemy, eX-eBS*65, eY+eBS*65);
@@ -86,7 +86,7 @@ void draw() {
       }
     }
     break;
-    case(eA):
+    case eA:
     int eAS = 0;
     for(eAS = 0; eAS < 5; eAS++) {
       if(eY < 120) {eY = 125;}
