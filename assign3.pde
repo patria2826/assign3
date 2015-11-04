@@ -18,7 +18,7 @@ void setup () {
   ///ENEMY///
   enemy = loadImage("img/enemy.png");
   eX = -60;
-  eY = floor(random(1,420)); 
+  eY = floor(random(1,415)); 
   enemystate = eC;
   ///PLAYER///
   player = loadImage("img/fighter.png");
@@ -89,8 +89,6 @@ void draw() {
     case eA:
     int eAS = 0;
     for(eAS = 0; eAS < 5; eAS++) {
-      if(eY < 120) {eY = 125;}
-      if(eY > 290) {eY = 285;}
       if(eAS == 0) {image(enemy, eX, eY);}
       if(eAS == 1) {image(enemy, eX-65, eY+60); image(enemy, eX-65, eY-60);}
       if(eAS == 2) {image(enemy, eX-130, eY+120); image(enemy, eX-130, eY-120);}
@@ -100,7 +98,7 @@ void draw() {
       if(eX >= 965) {
         enemystate = eC;
         eX = -60;
-        eY = floor(random(1,420));
+        eY = floor(random(1,415));
       
     }
     }
